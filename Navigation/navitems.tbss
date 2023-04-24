@@ -1,0 +1,45 @@
+#remove-listandcontenttype(Url={CurrentSite},ListName=NavigationItems,ctName=niNavItem)
+#remove-sitecolumnsbygroup(Url={CurrentSite},Group=ni)
+
+ensure-listandcontenttype(Url={CurrentSite},ContentType=niNavItem,Group=ni,ParentContentType=Item,Type=Generic,ListName=NavigationItems)
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=niAriaText,Title=AriaText,Group=ni,ContentType=niNavItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=niCaption,Title=Caption,Group=ni,ContentType=niNavItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=niLinkUrl,Title=LinkUrl,Group=ni,ContentType=niNavItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=niSiteID,Title=SiteID,Group=ni,ContentType=niNavItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=niStyles,Title=Styles,Group=ni,ContentType=niNavItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=niToolTip,Title=ToolTip,Group=ni,ContentType=niNavItem)
+
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=niIconDetail,Title=IconDetail,Group=ni,ContentType=niNavItem)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=niItemDetail,Title=ItemDetail,Group=ni,ContentType=niNavItem)
+
+
+ensure-sitecolumnchoice(Url={CurrentSite},Group=ni,Title=ItemMode,InternalName=niItemMode,Choices=MenuItem;IconLink;IconDetail,ContentType=niNavItem)
+
+ensure-sitecolumnchoice(Url={CurrentSite},Group=ni,Title=Position,InternalName=niPosition,Choices=Header;Footer;Quick Link,ContentType=niNavItem)
+ensure-sitecolumnchoice(Url={CurrentSite},Group=ni,Title=LinkType,InternalName=niLinkType,Choices=Global;Site,ContentType=niNavItem)
+
+ensure-sitecolumnboolean(Url={CurrentSite},InternalName=niEnabled,Title=NavEnabled,Group=ni,ContentType=niNavItem)
+ensure-sitecolumnboolean(Url={CurrentSite},InternalName=niIndent,Title=Indent,Group=ni,ContentType=niNavItem)
+
+ensure-sitecolumnboolean(Url={CurrentSite},InternalName=niNewTab,Title=Open in New Tab,Group=ni,ContentType=niNavItem)
+
+ensure-sitecolumninteger(Url={CurrentSite},InternalName=niLevel,Title=Navigation Level,Group=ni,ContentType=niNavItem)
+
+ensure-sitecolumninteger(Url={CurrentSite},InternalName=niSortOrder,Title=SortOrder,Group=ni,ContentType=niNavItem)
+ensure-sitecolumnlookup(Url={CurrentSite},internalName=niParentItem,title=ParentItem,Group=ni,ListName=NavigationItems,ShowField=Title,ContentType=niNavItem)
+
+ensure-defaultviewfields(Url={CurrentSite},ListName=NavigationItems,ViewFields=Title;niCaption;niEnabled,niParentItem)
+set-fielddefaultvalue(Url={CurrentSite},ListName=NavigationItems,FieldName=niPosition,DefaultValue=Header)
+set-fielddefaultvalue(Url={CurrentSite},ListName=NavigationItems,FieldName=niLinkType,DefaultValue=Global)
+set-fielddefaultvalue(Url={CurrentSite},ListName=NavigationItems,FieldName=niItemMode,DefaultValue=MenuItem)
+set-fielddefaultvalue(Url={CurrentSite},ListName=NavigationItems,FieldName=niLevel,DefaultValue=1)
+set-fielddefaultvalue(Url={CurrentSite},ListName=NavigationItems,FieldName=niEnabled,DefaultValue=1)
+ensure-uniquevalues(Url={CurrentSite},ListName=NavigationItems,FieldName=Title)
+set-fieldorder(Url={CurrentSite},ListName=NavigationItems,ContentType=niNavItem,Fields=Title;niItemMode;niCaption;niLinkUrl;niParentItem;niToolTip;niPosition;niLinkType;niEnabled;niNewTab;niLevel;niSortOrder;niSiteID;niAriaText;niStyles;niIndent)
+
+
+
+
+
+

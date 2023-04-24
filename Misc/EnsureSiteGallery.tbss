@@ -1,0 +1,5 @@
+ensure-sitegallery(walkcontext=https://sp2010.sharepointinfo.net,savecontext=https://sp19dev.sharepointinfo.net/sites/spi,SiteFile=C:\Users\johnr\Desktop\Scripts\SiteFile.txt)
+update-sitepermissions(savecontext=https://sp19dev.sharepointinfo.net/sites/spi)
+
+
+

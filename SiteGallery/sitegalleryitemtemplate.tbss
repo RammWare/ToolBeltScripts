@@ -1,0 +1,14 @@
+remove-listandcontenttype(Url={CurrentSite},ListName=SiteGalleryItemTemplates,ctName=sgSiteGalleryItemTemplate)
+remove-sitecolumnsbygroup(Url={CurrentSite},Group=SiteGalleryItemTemplates)
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Item,ContentType=sgSiteGalleryItemTemplate,ListName=SiteGalleryItemTemplates,Type=Generic,Group=SiteGalleryItemTemplates)
+
+
+ensure-sitecolumnboolean(Url={CurrentSite},InternalName=sgsrDefaultTemplate,Title=IsDefaultTemplate,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgstGroupPrefix,Title=Group Prefix,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgstImageUrl,Title=Gallery Image Url,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgstLogoUrl,Title=Site Logo Url,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgstSharePointTemplateId,Title=SharePoint Template ID,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgstSharePointSiteDesignName,Title=SharePoint Site Design Name,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=sgstPostCreateDetails,Title=Post Create Details,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgstSiteAdminUsers,Title=Site Admins,Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)
+ensure-sitecolumninteger(Url={CurrentSite},InternalName=sgstSiteQuota,Title=Site Quota (GB),Group=SiteGalleryItemTemplates,ContentType=sgSiteGalleryItemTemplate)

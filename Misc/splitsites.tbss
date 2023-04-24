@@ -1,0 +1,1 @@
+split-sites(url=https://rammworks-admin.sharepoint.com/,onedriveonly=true,command=remove-admin,splitcount=1,savepath=C:\Users\Administrator\OneDrive\Scripts\tbScripts\Standard)

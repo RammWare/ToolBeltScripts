@@ -1,0 +1,21 @@
+remove-listandcontenttype(Url={CurrentSite},ListName=SiteGalleryRequests,ctName=sgSiteGalleryRequest)
+remove-sitecolumnsbygroup(Url={CurrentSite},Group=SiteGalleryRequest)
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Item,ContentType=sgSiteGalleryRequest,ListName=SiteGalleryRequests,Type=Generic,Group=SiteGalleryRequest)
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgsrSiteKey,Title=Site Request Key,Group=SiteGalleryRequest,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgsrRequestStatus,Title=Site Request Status,Group=SiteGalleryRequest,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=sgsrSiteRequestJustification,Title=Site Request Justification,Group=SiteGalleryRequest,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=sgsrSiteRequestDescription,Title=Site Request Description,Group=SiteGalleryRequest,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=sgsrSiteRequestLog,Title=Site Request Log,Group=SiteGalleryRequest,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumnuser(Url={CurrentSite},InternalName=sgsrOwners,Title=Site Request Owners,Group=SiteGalleryRequest,allowgroups=false,AllowMulti=true,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumnuser(Url={CurrentSite},InternalName=sgsrMembers,Title=Site Request Members,Group=SiteGalleryRequest,allowgroups=false,AllowMulti=true,ContentType=sgSiteGalleryRequest)
+ensure-sitecolumnuser(Url={CurrentSite},InternalName=sgsrVisitors,Title=Site Request Visitors,Group=SiteGalleryRequest,allowgroups=false,AllowMulti=true,ContentType=sgSiteGalleryRequest)
+
+
+ensure-sitecolumnlookup(Url={CurrentSite},internalName=sgsrTemplate,title=Template Name,Group=SiteGalleryRequest,ListName=SiteGalleryItemTemplates,ShowField=Title,ContentType=sgSiteGalleryRequest)
+
+
+
+ensure-defaultviewfields(Url={CurrentSite},ListName=SiteGalleryRequests,viewfields=LinkTitle;sgsrSiteKey;sgsrSiteRequestJustification;sgsrSiteRequestDescription;sgsrOwners;sgsrMembers;sgsrVisitors)
+
+

@@ -1,0 +1,8 @@
+#remove-listandcontenttype(Url={CurrentSite},ListName=SiteGallerySettings,ctName=SiteGallerySettingsItem)
+#
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Item,ContentType=SiteGallerySettingsItem,ListName=SiteGallerySettings,Type=Generic,Group=SiteGallery)
+#
+ensure-sitecolumnnote(Url={CurrentSite},ContentType=SiteGallerySettingsItem,InternalName=sgSettings,Title=Site Gallery Settings,Group=SiteGallery)
+#
+ensure-defaultviewfields(Url={CurrentSite},ListName=SiteGalleryItems,viewfields=LinkTitle;sgSettings)
+#

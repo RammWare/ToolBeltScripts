@@ -1,0 +1,41 @@
+#remove-listandcontenttype(Url={CurrentSite},ListName=SiteGalleryItems,ctName=SiteGalleryItem)
+#remove-sitecolumnsbygroup(Url={CurrentSite},Group=SiteGallery)
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Item,ContentType=SiteGalleryItem,ListName=SiteGalleryItems,Type=Generic,Group=SiteGallery)
+
+
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgSiteKey,Title=Site Key,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgSiteID,Title=SiteID,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgSiteUrl,Title=SiteUrl,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgImageUrl,Title=ImageUrl,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgIconName,Title=IconName,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgOwnersGroupID,Title=OwnersGroupID,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgMembersGroupID,Title=MembersGroupID,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgVisitorsGroupID,Title=VisitorsGroupID,Group=SiteGallery)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgAdminsGroupID,Title=AdminsGroupID,Group=SiteGallery)
+
+
+
+ensure-sitecolumnnote(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgDescription,Title=Site Description,Group=SiteGallery)
+ensure-sitecolumnnote(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgGroupsWithAccess,Title=Groups With Access,Group=SiteGallery)
+ensure-sitecolumnnote(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgRequestComments,Title=Request Comments,Group=SiteGallery)
+ensure-sitecolumnchoice(Url={CurrentSite},ContentType=SiteGalleryItem,Group=SiteGallery,Title=ImageType,InternalName=sgImageType,Choices=Link;Icon)
+ensure-sitecolumnboolean(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgEnabled,Title=Site Enabled,Group=SiteGallery)
+ensure-sitecolumnboolean(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgRequiresOwnerApproval,Title=Requires Owner Approval,Group=SiteGallery)
+ensure-sitecolumninteger(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgSortOrder,Title=SiteOrder,Group=SiteGallery)
+ensure-sitecolumnchoice(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgSiteType,Title=SiteType,Group=SiteGallery,Choices=SharePoint;Teams)
+
+
+ensure-sitecolumnuser(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgOwnersGroup,Title=OwnersGroup,Group=SiteGallery,allowgroups=true)
+ensure-sitecolumnuser(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgMemmbersGroup,Title=MembersGroups,Group=SiteGallery,allowgroups=true,multiuser=true)
+ensure-sitecolumnuser(Url={CurrentSite},ContentType=SiteGalleryItem,InternalName=sgVisitorsGroup,Title=VisitorsGroup,Group=SiteGallery,allowgroups=true,multiuser=true)
+
+ensure-contenttypefield(Url={CurrentSite},ContentType=SiteGalleryItem,FieldName=sgRequiresOwnerApproval)
+ensure-contenttypefield(Url={CurrentSite},ContentType=SiteGalleryItem,FieldName=sgAdminsGroupID)
+
+
+
+
+ensure-defaultviewfields(Url={CurrentSite},ListName=SiteGalleryItems,viewfields=LinkTitle;sgSiteUrl;sgImageUrl;sgIconName;sgDesctiption;sgGroupsWithAccess;sgImageType;sgEnabled;sgSortOrder;sgOwnersGroupID;sgMemebersGroupID;sgVisitorsGroupID;sgSiteID;sgOwnersGroup;sgMemmbersGroup;sgVisitorsGroup;sgRequestComments;sgSiteType)
+
+
+ensure-uniquevalues(Url={CurrentSite},ListName=SiteGalleryItems,FieldName=sgSiteKey)

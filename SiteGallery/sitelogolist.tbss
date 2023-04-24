@@ -1,0 +1,11 @@
+#remove-listandcontenttype(Url={CurrentSite},ListName=SiteLogoItems,ctName=SiteLogoItem)
+#remove-sitecolumnsbygroup(Url={CurrentSite},Group=SiteGallery)
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Document,ContentType=SiteLogoItem,ListName=SiteLogoItems,Type=Document,Group=SiteGallery)
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Document,ContentType=SiteLogoRequest,ListName=SiteLogoRequests,Type=Document,Group=SiteGallery)
+
+
+
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgLogoRequestStatus,Title=sgLogoRequestStatus,Group=SiteGallery,ContentType=SiteLogoRequest)
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=sgGalleryItemID,Title=GalleryItemID,Group=SiteGallery,ContentType=SiteLogoRequest)

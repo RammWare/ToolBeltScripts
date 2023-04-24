@@ -1,0 +1,19 @@
+#remove-listandcontenttype(Url={CurrentSite},ListName=SiteAccessRequests,ctName=SiteAccessRequest)
+#remove-sitecolumnsbygroup(Url={CurrentSite},Group=SiteAccessRequest)
+ensure-listandcontenttype(Url={CurrentSite},ParentContentType=Item,ContentType=SiteAccessRequest,ListName=SiteAccessRequests,Type=Generic,Group=SiteAccessRequest)
+
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arSiteKey,Title=Request Site Key,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arAction,Title=Request Action,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arUserID,Title=Request User ID,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arSiteID,Title=Site ID,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arSiteUrl,Title=Site Url,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arOwnersGroupID,Title=Owners Group ID,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arMembersGroupID,Title=Members Group ID,Group=SiteAccessRequest)
+ensure-sitecolumn(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arVisitorsGroupID,Title=Visitors Group ID,Group=SiteAccessRequest)
+ensure-sitecolumnchoice(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arRequestLevel,Title=Access Level,Group=SiteAccessRequest,Choices=Member;Visitor;Owner)
+
+ensure-sitecolumnnote(Url={CurrentSite},ContentType=SiteAccessRequest,InternalName=arBusinessJustification,Title=BusinessJustification,Group=SiteAccessRequest)
+
+ensure-defaultviewfields(Url={CurrentSite},ListName=SiteAccessRequests,viewfields=LinkTitle;arAction;arSiteKey;arSiteID;arSiteUrl;arOwnersGroupID;arMembersGroupID;arVisitorsGroupID;arRequestComments;arRequestLevel;arUserID)
+
+

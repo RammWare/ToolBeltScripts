@@ -1,0 +1,28 @@
+remove-listandcontenttype(Url={CurrentSite},ListName=ContentBrowserItems,ctName=cbItem)
+remove-sitecolumnsbygroup(Url={CurrentSite},Group=cbi)
+
+#ensure-contenttype(Url={CurrentSite},Name=cbItem,ParentName=Item,Group=cbi)
+#ensure-list(Url={CurrentSite},ListName=ContentBrowserItems,Type=Generic)
+#ensure-listhascontenttype(Url={CurrentSite},ctName=cbItem,ListName=ContentBrowserItems)
+
+ensure-listandcontenttype(Url={CurrentSite},ContentType=cbItem,Group=cbi,ParentContentType=Item,Type=Generic,ListName=ContentBrowserItems)
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=cbiCaption,Title=Content Caption,Group=cbi,ContentType=cbItem)
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=cbiSearchQuery,Title=Content Search Query,Group=cbi,ContentType=cbItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=cbiSearchProperties,Title=Content Search Properties,Group=cbi,ContentType=cbItem)
+ensure-sitecolumn(Url={CurrentSite},InternalName=cbiSearchRefiners,Title=Content Search Refiners,Group=cbi,ContentType=cbItem)
+ensure-sitecolumninteger(Url={CurrentSite},InternalName=cbiContentItemCount,Title=Content Item Count,Group=cbi,ContentType=cbItem)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=cbiContentSearchMarkup,Title=Content Search Markup,Group=cbi,ContentType=cbItem)
+
+
+ensure-sitecolumn(Url={CurrentSite},InternalName=cbiToolTip,Title=Content ToolTip,Group=cbi,ContentType=cbItem)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=cbiDetails,Title=Content Details,Group=cbi,ContentType=cbItem)
+
+ensure-sitecolumnchoice(Url={CurrentSite},Group=cbi,Title=Content Item Type,InternalName=cbiContentItemType,Choices=Link;Link in New Window;Search;Markup,ContentType=cbItem)
+ensure-sitecolumnboolean(Url={CurrentSite},InternalName=cbiEnabled,Title=ContentEnabled,Group=cbi,ContentType=cbItem)
+ensure-sitecolumninteger(Url={CurrentSite},InternalName=cbiLevel,Title=Content Item Level,Group=cbi,ContentType=cbItem)
+ensure-sitecolumninteger(Url={CurrentSite},InternalName=cbiSortOrder,Title=Content SortOrder,Group=cbi,ContentType=cbItem)
+
+ensure-sitecolumnlookup(Url={CurrentSite},internalName=cbiParentItem,title=cbiParentItem, Group=cbi,ListName=ContentBrowserItems,ShowField=Title)
+ensure-contenttypefield(Url={CurrentSite},ContentType=cbItem,FieldName=cbiParentItem)

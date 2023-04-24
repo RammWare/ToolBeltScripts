@@ -1,0 +1,31 @@
+remove-list(Url={CurrentSite},listname=Notifications)
+remove-contenttype(Url={CurrentSite},contenttype=NotificationItem)
+remove-sitecolumnsbygroup(Url={CurrentSite},group=Notifications)
+
+ensure-contenttype(Url={CurrentSite},Name=NotificationItem,ParentName=Item,Group=Notification)
+ensure-list(Url={CurrentSite},ListName=Notifications,Type=Generic)
+ensure-listhascontenttype(Url={CurrentSite},ContentType=NotificationItem,ListName=Notifications)
+remove-contenttypefromlist(Url={CurrentSite},ContentType=Item,ListName=Notifications)
+
+remove-sitecolumnsbygroup(Url={CurrentSite},group=Notifications)
+
+
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=alertContent,Title=Alert Content,Group=Notifications)
+ensure-sitecolumnnote(Url={CurrentSite},InternalName=alertSites,Title=Alert Sites,Group=Notifications)
+ensure-sitecolumnchoice(Url={CurrentSite},InternalName=alertPosition,Title=Alert Position,Group=Notifications,Choices=Top;Bottom;Both)
+ensure-sitecolumnchoice(Url={CurrentSite},InternalName=alertLevel,Title=Alert Level,Group=Notifications,Choices=Info;Warning;Critical)
+ensure-sitecolumnchoice(Url={CurrentSite},InternalName=alertMode,Title=Alert Mode,Group=Notifications,Choices=Global;Site Specific)
+ensure-sitecolumnchoice(Url={CurrentSite},InternalName=alertPeriod,Title=Alert Period,Group=Notifications,Choices=WhileEnabled;Timeframe)
+ensure-sitecolumnboolean(Url={CurrentSite},InternalName=alertEnabled,Title=Alert Enabled,Group=Notifications)
+ensure-sitecolumndatetime(Url={CurrentSite},InternalName=alertStart,Title=Alert Start,Group=Notifications)
+ensure-sitecolumndatetime(Url={CurrentSite},InternalName=alertEnd,Title=Alert End,Group=Notifications)
+
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertContent)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertPosition)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertMode)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertPeriod)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertEnabled)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertStart)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertEnd)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertSites)
+ensure-contenttypefield(Url={CurrentSite},ContentType=NotificationItem,FieldName=alertLevel)

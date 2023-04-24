@@ -1,0 +1,3 @@
+set-webproperty(url={CurrentSite},propertyname=modernlinkbox,propertyvalue=This Site is Being Migrated)
+set-webproperty(url={CurrentSite},propertyname=linkdestination,propertyvalue=https://rammworks.sharepoint.com)
+set-webproperty(url={CurrentSite},propertyname=blackbanner,propertyvalue=true)
